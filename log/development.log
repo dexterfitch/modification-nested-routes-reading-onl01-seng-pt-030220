@@ -4077,3 +4077,13 @@ Redirected to http://165.227.81.218:45699/posts/18
 Completed 302 Found in 7ms (ActiveRecord: 4.0ms)
 
 
+Started GET "/posts/18" for 50.39.101.120 at 2020-08-01 01:09:00 +0000
+Cannot render console from 50.39.101.120! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 19ms (Views: 15.7ms | ActiveRecord: 0.4ms)
+
+
