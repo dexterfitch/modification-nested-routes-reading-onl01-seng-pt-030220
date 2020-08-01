@@ -33,7 +33,7 @@ class PostsController < ApplicationController
   end
 
   def edit
-    if params[:author_id] 
+    if params[:author_id]
       if !Author.exists?(params[:author_id])
         redirect_to authors_path, alert: "Author not found."
       else
