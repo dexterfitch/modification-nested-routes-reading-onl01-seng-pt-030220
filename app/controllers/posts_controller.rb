@@ -34,14 +34,14 @@ class PostsController < ApplicationController
 
   def edit
     if params[:author_id]
-      if Author.find(params[:author_id]).valid?
-        author = Author.find(params[:author_id])
+      author = Author.find(params[:author_id])
+      if author.nil?
+        redirect_to authors_path, alert: "Author not found."
+      else
         @post = author.posts.find(params[:id])
         if @post.nil?
           redirect_to author_posts_path(author), alert: "Post not found."
         end
-      else
-        redirect_to authors_path, alert: "Author not found."
       end
     else
       @post = Post.find(params[:id])
